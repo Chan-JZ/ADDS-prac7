@@ -15,26 +15,26 @@ int main() {
     // for (int i : result) cout << i << " ";
     // cout << endl; 
 
-    vector<int> result2 = qs1->sort(list1);
-    for (int i : result2) cout << i << " ";
-    cout << endl;
+    // vector<int> result2 = qs1->sort(list1);
+    // for (int i : result2) cout << i << " ";
+    // cout << endl;
 
     // cout << rbs->search(result, 7) << endl;
 
     vector<int> list2;
     int x;
-    // while (cin >> x) list2.push_back(x);
+    while (cin >> x) list2.push_back(x);
 
-    // vector<int> result3 = qs1->sort(list2);
-    // bool result4 = rbs->search(result3, 1);
+    vector<int> result3 = qs1->sort(list2);
+    bool result4 = rbs->search(result3, 1);
 
-    // if (result4 == true) cout << "true ";
-    // else cout << "false ";
-    // for (int i : result3) cout << i << " ";
-    // cout << endl;
+    if (result4 == true) cout << "true ";
+    else cout << "false ";
+    for (int i : result3) cout << i << " ";
+    cout << endl;
 
-    // for (int i : list2) cout << i << " ";
-    // cout << endl;
-    // cout << list2.size() << endl;
+    for (int i : list2) cout << i << " ";
+    cout << endl;
+    cout << list2.size() << endl;
     return 0;
 }
