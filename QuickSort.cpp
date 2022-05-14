@@ -6,20 +6,21 @@ using namespace std;
 
 void QuickSort::partition(std::vector<int> *sublist, int start, int end) {
     if (start == end) {
-        // cout << "Base case!" << endl;
+        cout << "Base case!" << endl;
         return;
     }
 
-    // cout << "sublist content" << endl;
-    // for (int i=start; i<=end; i++) cout << (*sublist)[i] << " ";
-    // cout << endl;
+    cout << "sublist content" << endl;
+    for (int i=start; i<=end; i++) cout << (*sublist)[i] << " ";
+    cout << endl;
     int pivot;
     int index1 = start;
     int index2 = end;
     if (end - start >= 2) pivot = start+2;
     else pivot = end;
-    while (index1 < index2) {
-        // cout << "iteration" << endl;
+    cout << "pivot at start: " << pivot << endl;
+    while (index1 <= index2) {
+        cout << "iteration" << endl;
         if ((*sublist)[index1] <= (*sublist)[pivot]) index1++;
         else if ((*sublist)[index2] >= (*sublist)[pivot]) index2--;
         else {
@@ -28,6 +29,7 @@ void QuickSort::partition(std::vector<int> *sublist, int start, int end) {
             index2--;
         }
     }
+
 
     if (pivot < index2) {
         swap((*sublist)[pivot], (*sublist)[index2]);
@@ -39,14 +41,14 @@ void QuickSort::partition(std::vector<int> *sublist, int start, int end) {
     }
 
     
-    // cout << "result:" <<endl;
-    // for (int i=start; i<=end; i++) cout << (*sublist)[i] << " ";
-    // cout << endl;
-    // cout << "Pivot: " << pivot << endl;
+    cout << "result:" <<endl;
+    for (int i=start; i<=end; i++) cout << (*sublist)[i] << " ";
+    cout << endl;
+    cout << "Pivot: " << pivot << endl;
 
     if (pivot-1 >= start) partition(sublist, start, pivot-1);
     if (pivot+1 <= end) partition(sublist, pivot+1, end);
-    return; 
+    return;
 }
 
 std::vector<int> QuickSort::sort(std::vector<int> list) {
