@@ -16,7 +16,7 @@ bool RecursiveBinarySearch::helper(std::vector<int>* helperList, int x, int star
     }
 
     int mid = start + (end - start) / 2;
-    cout << "mid: " << mid << endl;
+    // cout << "mid: " << mid << endl;
     if ((*helperList)[mid] == x) return true;
     else if ((*helperList)[mid] < x) helper(helperList, x, mid+1, end);
     else helper(helperList, x, start, mid-1); 
